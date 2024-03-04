@@ -13,7 +13,6 @@ import model.entity.Jogador;
 
 public class JogadorRepository implements BaseRepository<Jogador>{
 
-	@Override
 	public Jogador salvar(Jogador novoJogador) {
 		String query = "INSERT INTO jogador (nome, email, data_nascimento, total_partidas, percentual_vitorias) VALUES (?, ?, ?, ?, ?)";
 		Connection conn = Banco.getConnection();
@@ -44,7 +43,6 @@ public class JogadorRepository implements BaseRepository<Jogador>{
 		return novoJogador;
 	}
 
-	@Override
 	public boolean excluir(int id) {
 		Connection conn = Banco.getConnection();
 		Statement stmt = Banco.getStatement(conn);
@@ -65,7 +63,6 @@ public class JogadorRepository implements BaseRepository<Jogador>{
 		return excluiu;
 	}
 
-	@Override
 	public boolean alterar(Jogador novoJogador) {
 		boolean alterou = false;
 		String query = "UPDATE jogador SET nome = ?, email = ?, data_nascimento = ?, total_partidas = ?, percentual_vitorias = ?";
@@ -90,7 +87,6 @@ public class JogadorRepository implements BaseRepository<Jogador>{
 		return alterou;
 	}
 
-	@Override
 	public Jogador consultarPorId(int id) {
 		Connection conn = Banco.getConnection();
 		Statement stmt = Banco.getStatement(conn);
@@ -123,7 +119,6 @@ public class JogadorRepository implements BaseRepository<Jogador>{
 		return jogador;
 	}
 
-	@Override
 	public ArrayList<Jogador> consultarTodos() {
 		ArrayList<Jogador> jogadores = new ArrayList<>();
 		

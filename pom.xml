@@ -3,11 +3,4 @@
   <groupId>senac-backend-2024-Caleb-Fernandes</groupId>
   <artifactId>senac-backend-2024-Caleb-Fernandes</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-  	<dependency>
-  		<groupId>senac-20241-backend-exemplos</groupId>
-  		<artifactId>senac-20241-backend-exemplos</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  </dependencies>
 </project>
