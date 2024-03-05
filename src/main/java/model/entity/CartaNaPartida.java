@@ -3,7 +3,7 @@ package model.entity;
 public class CartaNaPartida {
 	
 	private int id;
-	private int idPrivate;
+	private int idPartida;
 	private Carta carta;
 	private boolean pertenceAoJogador;
 	private boolean utilizada;
@@ -12,10 +12,10 @@ public class CartaNaPartida {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CartaNaPartida(int id, int idPrivate, Carta carta, boolean pertenceAoJogador, boolean utilizada) {
+	public CartaNaPartida(int id, int idPartida, Carta carta, boolean pertenceAoJogador, boolean utilizada) {
 		super();
 		this.id = id;
-		this.idPrivate = idPrivate;
+		this.idPartida = idPartida;
 		this.carta = carta;
 		this.pertenceAoJogador = pertenceAoJogador;
 		this.utilizada = utilizada;
@@ -26,11 +26,11 @@ public class CartaNaPartida {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getIdPrivate() {
-		return idPrivate;
+	public int getIdPartida() {
+		return idPartida;
 	}
-	public void setIdPrivate(int idPrivate) {
-		this.idPrivate = idPrivate;
+	public void setIdPartida(int idPartida) {
+		this.idPartida = idPartida;
 	}
 	public Carta getCarta() {
 		return carta;
