@@ -1,8 +1,8 @@
-package model.dto;
+package model.dto.vemNoX1;
 
 import java.util.List;
 
-import model.entity.CartaNaPartida;
+import model.entity.vemNoX1.CartaNaPartida;
 
 public class PartidaDTO {
 	

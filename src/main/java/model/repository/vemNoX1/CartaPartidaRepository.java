@@ -1,4 +1,4 @@
-package model.repository;
+package model.repository.vemNoX1;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import model.entity.CartaNaPartida;
+import model.entity.vemNoX1.CartaNaPartida;
 
 public class CartaPartidaRepository implements BaseRepository<CartaNaPartida>{
 	

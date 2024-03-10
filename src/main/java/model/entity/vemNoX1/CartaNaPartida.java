@@ -1,4 +1,4 @@
-package model.entity;
+package model.entity.vemNoX1;
 
 public class CartaNaPartida {
 	

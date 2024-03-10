@@ -1,9 +1,9 @@
-package service;
+package service.vemNoX1;
 
 import java.util.List;
 
-import model.entity.Jogador;
-import model.repository.JogadorRepository;
+import model.entity.vemNoX1.Jogador;
+import model.repository.vemNoX1.JogadorRepository;
 
 public class JogadorService {
 

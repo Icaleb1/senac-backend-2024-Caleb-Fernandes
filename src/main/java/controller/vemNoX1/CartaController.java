@@ -1,4 +1,4 @@
-package controller;
+package controller.vemNoX1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +13,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import model.entity.Carta;
-import service.CartaService;
+import model.entity.vemNoX1.Carta;
+import service.vemNoX1.CartaService;
 
 @Path("/carta")
 public class CartaController {

@@ -1,4 +1,4 @@
-package controller;
+package controller.vemNoX1;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import model.entity.Jogador;
-import service.JogadorService;
+import model.entity.vemNoX1.Jogador;
+import service.vemNoX1.JogadorService;
 
 @Path("/jogador")
 public class JogadorController {

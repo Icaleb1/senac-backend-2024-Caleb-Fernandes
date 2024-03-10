@@ -1,4 +1,4 @@
-package controller;
+package controller.vemNoX1;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import model.dto.JogadaDTO;
-import model.dto.PartidaDTO;
-import model.entity.Partida;
-import service.PartidaService;
+import model.dto.vemNoX1.JogadaDTO;
+import model.dto.vemNoX1.PartidaDTO;
+import model.entity.vemNoX1.Partida;
+import service.vemNoX1.PartidaService;
 
 @Path("/partida")
 public class PartidaController {

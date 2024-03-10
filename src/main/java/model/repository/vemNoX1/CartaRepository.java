@@ -1,4 +1,4 @@
-package model.repository;
+package model.repository.vemNoX1;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -10,8 +10,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import model.entity.Carta;
-import model.entity.Partida;
+import model.entity.vemNoX1.Carta;
+import model.entity.vemNoX1.Partida;
 
 public class CartaRepository implements BaseRepository<Carta> {
 

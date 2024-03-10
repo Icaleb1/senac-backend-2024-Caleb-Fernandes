@@ -1,18 +1,18 @@
-package service;
+package service.vemNoX1;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import model.dto.JogadaDTO;
-import model.dto.PartidaDTO;
-import model.entity.Resultado;
-import model.entity.Carta;
-import model.entity.CartaNaPartida;
-import model.entity.Partida;
-import model.repository.CartaPartidaRepository;
-import model.repository.CartaRepository;
-import model.repository.JogadorRepository;
-import model.repository.PartidaRepository;
+import model.dto.vemNoX1.JogadaDTO;
+import model.dto.vemNoX1.PartidaDTO;
+import model.entity.vemNoX1.Resultado;
+import model.entity.vemNoX1.Carta;
+import model.entity.vemNoX1.CartaNaPartida;
+import model.entity.vemNoX1.Partida;
+import model.repository.vemNoX1.CartaPartidaRepository;
+import model.repository.vemNoX1.CartaRepository;
+import model.repository.vemNoX1.JogadorRepository;
+import model.repository.vemNoX1.PartidaRepository;
 
 public class PartidaService {
 

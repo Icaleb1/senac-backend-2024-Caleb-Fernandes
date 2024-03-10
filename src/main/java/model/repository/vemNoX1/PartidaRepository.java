@@ -1,4 +1,4 @@
-package model.repository;
+package model.repository.vemNoX1;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.time.ZoneId;
 import java.util.ArrayList;
 
-import model.entity.Resultado;
-import model.entity.Partida;
+import model.entity.vemNoX1.Resultado;
+import model.entity.vemNoX1.Partida;
 
 public class PartidaRepository implements BaseRepository<Partida> {
 

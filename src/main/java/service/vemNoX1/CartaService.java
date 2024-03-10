@@ -1,11 +1,11 @@
-package service;
+package service.vemNoX1;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import exception.VemNoX1Exception;
-import model.entity.Carta;
-import model.repository.CartaRepository;
+import model.entity.vemNoX1.Carta;
+import model.repository.vemNoX1.CartaRepository;
 
 public class CartaService {
 
