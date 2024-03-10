@@ -4,6 +4,7 @@ public enum Resultado {
 	
 	VITORIA_CPU,
 	VITORIA_JOGADOR,
-	EMPATE
+	EMPATE,
+	EM_ANDAMENTO
 
 }
