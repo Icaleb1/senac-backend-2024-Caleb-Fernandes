@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.sql.PreparedStatement;
 
-
+import model.entity.controleVacinas.enumerador.sexo;
+import model.entity.controleVacinas.enumerador.tipoPessoa;
 import model.entity.controleVacinas.pessoas.Pessoa;
 import model.repository.vemNoX1.Banco;
 
@@ -46,4 +49,60 @@ public class PessoaRepository {
 		
 	}
 
-}
+	public boolean excluir(int id) {
+		Connection conn = Banco.getConnection();
+		Statement stmt = Banco.getStatement(conn);
+		boolean excluiu = false;
+		String query = "DELETE FROM pessoa WHERE id = " + id;
+		try {
+			if (stmt.executeUpdate(query) == 1) {
+				excluiu = true;
+			}
+		} catch (SQLException erro) {
+			System.out.println("Erro ao excluir jogador");
+			System.out.println("Erro: " + erro.getMessage());
+		} finally {
+			Banco.closeStatement(stmt);
+			Banco.closeConnection(conn);
+		}
+		return excluiu;
+	}
+	
+	public ArrayList<Pessoa> consultarTodas(){
+		ArrayList<Pessoa> pessoas = new ArrayList<>();
+		
+		Connection conn = Banco.getConnection();
+		Statement stmt = Banco.getStatement(conn);
+		
+		ResultSet resultado = null;
+		String query = "SELECT * FROM pessoa";
+		
+		try {
+			resultado = stmt.executeQuery(query);
+			while (resultado.next()) {
+				Pessoa pessoa = new Pessoa();
+				
+				pessoa.setId(Integer.parseInt(resultado.getString("ID")));
+				pessoa.setNome(resultado.getString("NOME"));
+				pessoa.setDataNascimento(resultado.getDate("DATA_NASCIMENTO").toLocalDate());
+				pessoa.setSexo(sexo.valueOf(resultado.getString("SEXO")));
+				pessoa.setTipoPessoa(tipoPessoa.valueOf(resultado.getString("TIPO_PESSOA")));
+				pessoa.setAvaliacao(resultado.getInt("AVALIACAO"));
+				pessoas.add(pessoa);
+				
+			}
+		} catch (SQLException erro) {
+			System.out.println("Erro ao executar consultar todas as jogadors");
+			System.out.println("Erro: " + erro.getMessage());
+		} finally {
+			Banco.closeResultSet(resultado);
+			Banco.closeStatement(stmt);
+			Banco.closeConnection(conn);
+		}
+		return pessoas;
+	}
+}	
+	
+	
+	
+
