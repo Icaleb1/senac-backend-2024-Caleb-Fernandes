@@ -1,6 +1,6 @@
 package model.entity.controleVacinas.enumerador;
 
-public enum tipoPessoa {
+public enum TipoPessoa {
 	
 	PESQUISADOR,
 	VOLUNTARIO,

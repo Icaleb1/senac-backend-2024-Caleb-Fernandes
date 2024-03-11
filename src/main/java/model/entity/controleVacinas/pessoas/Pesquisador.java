@@ -9,8 +9,8 @@ public class Pesquisador extends Pessoa{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pesquisador(int id, String nome, LocalDate dataNascimento, model.entity.controleVacinas.enumerador.sexo sexo,
-			String cpf, model.entity.controleVacinas.enumerador.tipoPessoa tipoPessoa, int avaliacao) {
+	public Pesquisador(int id, String nome, LocalDate dataNascimento, model.entity.controleVacinas.enumerador.Sexo sexo,
+			String cpf, model.entity.controleVacinas.enumerador.TipoPessoa tipoPessoa, int avaliacao) {
 		super(id, nome, dataNascimento, sexo, cpf, tipoPessoa, avaliacao);
 		// TODO Auto-generated constructor stub
 	}

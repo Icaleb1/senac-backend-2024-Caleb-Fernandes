@@ -1,6 +1,6 @@
 package model.entity.controleVacinas.enumerador;
 
-public enum sexo {
+public enum Sexo {
 	
 	MASCULINO,
 	FEMININO

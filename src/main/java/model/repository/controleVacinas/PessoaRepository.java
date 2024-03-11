@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 
-import model.entity.controleVacinas.enumerador.sexo;
-import model.entity.controleVacinas.enumerador.tipoPessoa;
+import model.entity.controleVacinas.enumerador.Sexo;
+import model.entity.controleVacinas.enumerador.TipoPessoa;
 import model.entity.controleVacinas.pessoas.Pessoa;
 import model.repository.vemNoX1.Banco;
 
@@ -85,8 +85,8 @@ public class PessoaRepository {
 				pessoa.setId(Integer.parseInt(resultado.getString("ID")));
 				pessoa.setNome(resultado.getString("NOME"));
 				pessoa.setDataNascimento(resultado.getDate("DATA_NASCIMENTO").toLocalDate());
-				pessoa.setSexo(sexo.valueOf(resultado.getString("SEXO")));
-				pessoa.setTipoPessoa(tipoPessoa.valueOf(resultado.getString("TIPO_PESSOA")));
+				pessoa.setSexo(Sexo.valueOf(resultado.getString("SEXO")));
+				pessoa.setTipoPessoa(TipoPessoa.valueOf(resultado.getString("TIPO_PESSOA")));
 				pessoa.setAvaliacao(resultado.getInt("AVALIACAO"));
 				pessoas.add(pessoa);
 				

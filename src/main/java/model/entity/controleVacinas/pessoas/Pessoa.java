@@ -2,17 +2,17 @@ package model.entity.controleVacinas.pessoas;
 
 import java.time.LocalDate;
 
-import model.entity.controleVacinas.enumerador.sexo;
-import model.entity.controleVacinas.enumerador.tipoPessoa;
+import model.entity.controleVacinas.enumerador.Sexo;
+import model.entity.controleVacinas.enumerador.TipoPessoa;
 
 public class Pessoa {
 	
 	private int id;
 	private String nome;
 	private LocalDate dataNascimento;
-	private sexo sexo;
+	private Sexo sexo;
 	private String cpf;
-	private tipoPessoa tipoPessoa;
+	private TipoPessoa tipoPessoa;
 	private int avaliacao;
 	
 	public Pessoa() {
@@ -20,8 +20,8 @@ public class Pessoa {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pessoa(int id, String nome, LocalDate dataNascimento, model.entity.controleVacinas.enumerador.sexo sexo,
-			String cpf, model.entity.controleVacinas.enumerador.tipoPessoa tipoPessoa, int avaliacao) {
+	public Pessoa(int id, String nome, LocalDate dataNascimento, model.entity.controleVacinas.enumerador.Sexo sexo,
+			String cpf, model.entity.controleVacinas.enumerador.TipoPessoa tipoPessoa, int avaliacao) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -58,11 +58,11 @@ public class Pessoa {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public sexo getSexo() {
+	public Sexo getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(sexo sexo) {
+	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
 	}
 
@@ -74,11 +74,11 @@ public class Pessoa {
 		this.cpf = cpf;
 	}
 
-	public tipoPessoa getTipoPessoa() {
+	public TipoPessoa getTipoPessoa() {
 		return tipoPessoa;
 	}
 
-	public void setTipoPessoa(tipoPessoa tipoPessoa) {
+	public void setTipoPessoa(TipoPessoa tipoPessoa) {
 		this.tipoPessoa = tipoPessoa;
 	}
 
