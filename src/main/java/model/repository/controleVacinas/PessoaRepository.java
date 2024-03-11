@@ -20,6 +20,9 @@ public class PessoaRepository {
 				+ "cpf, tipo_pessoa, avaliacao) VALUES (?,?,?,?,?,?)";
 		Connection conn = Banco.getConnection();
 		PreparedStatement psmt = Banco.getPreparedStatement(conn, query);
+		
+
+
 		try {
 			
 			psmt.setString(1, novaPessoa.getNome());
