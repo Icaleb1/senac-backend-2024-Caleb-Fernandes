@@ -19,7 +19,7 @@ public class PessoaRepository {
 		String query = "INSERT INTO pessoa (nome, data_nascimento, sexo, "
 				+ "cpf, tipo_pessoa, avaliacao) VALUES (?,?,?,?,?,?)";
 		Connection conn = Banco.getConnection();
-		PreparedStatement psmt = Banco.getPreparedStatement(conn, query);
+		PreparedStatement psmt = Banco.getPreparedStatementWithPk(conn, query);
 		
 
 
