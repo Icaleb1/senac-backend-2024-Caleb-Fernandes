@@ -17,7 +17,7 @@ public class PessoaRepository {
 	
 	public Pessoa salvar(Pessoa novaPessoa) {
 		String query = "INSERT INTO pessoa (nome, data_nascimento, sexo, "
-				+ "cpf, tipo_pessoa, avaliacao) VALUES (?,?,?,?,?,?)";
+				+ "cpf, tipo_pessoa) VALUES (?,?,?,?,?)";
 		Connection conn = Banco.getConnection();
 		PreparedStatement psmt = Banco.getPreparedStatementWithPk(conn, query);
 		
@@ -30,7 +30,6 @@ public class PessoaRepository {
 			psmt.setString(3, novaPessoa.getSexo().toString());
 			psmt.setString(4, novaPessoa.getCpf());
 			psmt.setString(5, novaPessoa.getTipoPessoa().toString());
-			psmt.setInt(6, novaPessoa.getAvaliacao());
 			
 			psmt.execute();
 			ResultSet resultado = psmt.getGeneratedKeys();
@@ -62,7 +61,7 @@ public class PessoaRepository {
 				excluiu = true;
 			}
 		} catch (SQLException erro) {
-			System.out.println("Erro ao excluir jogador");
+			System.out.println("Erro ao excluir pessoa");
 			System.out.println("Erro: " + erro.getMessage());
 		} finally {
 			Banco.closeStatement(stmt);
@@ -90,12 +89,11 @@ public class PessoaRepository {
 				pessoa.setDataNascimento(resultado.getDate("DATA_NASCIMENTO").toLocalDate());
 				pessoa.setSexo(Sexo.valueOf(resultado.getString("SEXO")));
 				pessoa.setTipoPessoa(TipoPessoa.valueOf(resultado.getString("TIPO_PESSOA")));
-				pessoa.setAvaliacao(resultado.getInt("AVALIACAO"));
 				pessoas.add(pessoa);
 				
 			}
 		} catch (SQLException erro) {
-			System.out.println("Erro ao executar consultar todas as jogadors");
+			System.out.println("Erro ao executar consultar todas as pessoas");
 			System.out.println("Erro: " + erro.getMessage());
 		} finally {
 			Banco.closeResultSet(resultado);

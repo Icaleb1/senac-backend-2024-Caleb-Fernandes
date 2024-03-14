@@ -1,7 +1,9 @@
 package model.entity.controleVacinas.pessoas;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import model.entity.controleVacinas.Vacinacao;
 import model.entity.controleVacinas.enumerador.Sexo;
 import model.entity.controleVacinas.enumerador.TipoPessoa;
 
@@ -13,15 +15,15 @@ public class Pessoa {
 	private Sexo sexo;
 	private String cpf;
 	private TipoPessoa tipoPessoa;
-	private int avaliacao;
-	
+	private List<Vacinacao> vacinacoes;
+		
 	public Pessoa() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	public Pessoa(int id, String nome, LocalDate dataNascimento, model.entity.controleVacinas.enumerador.Sexo sexo,
-			String cpf, model.entity.controleVacinas.enumerador.TipoPessoa tipoPessoa, int avaliacao) {
+			String cpf, model.entity.controleVacinas.enumerador.TipoPessoa tipoPessoa) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -29,7 +31,6 @@ public class Pessoa {
 		this.sexo = sexo;
 		this.cpf = cpf;
 		this.tipoPessoa = tipoPessoa;
-		this.avaliacao = avaliacao;
 	}
 
 
@@ -82,13 +83,6 @@ public class Pessoa {
 		this.tipoPessoa = tipoPessoa;
 	}
 
-	public int getAvaliacao() {
-		return avaliacao;
-	}
-
-	public void setAvaliacao(int avaliacao) {
-		this.avaliacao = avaliacao;
-	}
 	
 	
 	
