@@ -3,7 +3,7 @@ package controller.vemNoX1;
 import java.util.ArrayList;
 import java.util.List;
 
-import exception.VemNoX1Exception;
+import exception.vemNoX1.VemNoX1Exception;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;

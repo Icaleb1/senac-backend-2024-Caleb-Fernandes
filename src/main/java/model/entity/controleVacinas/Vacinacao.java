@@ -9,7 +9,7 @@ public class Vacinacao {
 	private int id;
 	private int idPessoa;
 	private Vacina vacina;
-	private LocalDate dataAplicacao;
+	private LocalDate data;
 	private int avaliacao;
 	
 	
@@ -18,12 +18,12 @@ public class Vacinacao {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Vacinacao(int id, int idPessoa, Vacina vacina, LocalDate dataAplicacao, int avaliacao) {
+	public Vacinacao(int id, int idPessoa, Vacina vacina, LocalDate data, int avaliacao) {
 		super();
 		this.id = id;
 		this.idPessoa = idPessoa;
 		this.vacina = vacina;
-		this.dataAplicacao = dataAplicacao;
+		this.data = data;
 		this.avaliacao = avaliacao;
 	}
 
@@ -51,12 +51,12 @@ public class Vacinacao {
 		this.vacina = vacina;
 	}
 
-	public LocalDate getDataAplicacao() {
-		return dataAplicacao;
+	public LocalDate getData() {
+		return data;
 	}
 
-	public void setDataAplicacao(LocalDate dataAplicacao) {
-		this.dataAplicacao = dataAplicacao;
+	public void setData(LocalDate data) {
+		this.data = data;
 	}
 
 	public int getAvaliacao() {
