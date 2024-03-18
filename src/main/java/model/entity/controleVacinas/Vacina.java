@@ -12,7 +12,7 @@ public class Vacina {
 	private String nome;
 	private String paisOrigem;
 	private EstagioPesquisa estagioPesquisa;
-	private Pessoa pesquisadorResponsavel;
+	private int idPesquisador;
 	private LocalDate dataInicio;
 	
 	public Vacina() {
@@ -21,13 +21,13 @@ public class Vacina {
 	}
 
 	public Vacina(int id, String nome, String paisOrigem, EstagioPesquisa estagioPesquisa,
-			Pessoa pesquisadorResponsavel, LocalDate dataInicio) {
+			int pesquisadorResponsavel, LocalDate dataInicio) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.paisOrigem = paisOrigem;
 		this.estagioPesquisa = estagioPesquisa;
-		this.pesquisadorResponsavel = pesquisadorResponsavel;
+		this.idPesquisador = pesquisadorResponsavel;
 		this.dataInicio = dataInicio;
 	}
 
@@ -63,12 +63,12 @@ public class Vacina {
 		this.estagioPesquisa = estagioPesquisa;
 	}
 
-	public Pessoa getPesquisadorResponsavel() {
-		return pesquisadorResponsavel;
+	public int getPesquisadorResponsavel() {
+		return idPesquisador;
 	}
 
-	public void setPesquisadorResponsavel(Pessoa pesquisadorResponsavel) {
-		this.pesquisadorResponsavel = pesquisadorResponsavel;
+	public void setPesquisadorResponsavel(int pesquisadorResponsavel) {
+		this.idPesquisador = pesquisadorResponsavel;
 	}
 
 	public LocalDate getDataInicio() {
