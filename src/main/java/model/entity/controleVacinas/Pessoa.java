@@ -1,29 +1,29 @@
-package model.entity.controleVacinas.pessoas;
+ package model.entity.controleVacinas;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import model.entity.controleVacinas.Vacinacao;
-import model.entity.controleVacinas.enumerador.Sexo;
-import model.entity.controleVacinas.enumerador.TipoPessoa;
+
 
 public class Pessoa {
 	
 	private int id;
 	private String nome;
 	private LocalDate dataNascimento;
-	private Sexo sexo;
+	private char sexo;
 	private String cpf;
-	private TipoPessoa tipoPessoa;
-	private List<Vacinacao> vacinacoes;
+	private int tipoPessoa;
+	private Pais pais;
+//	private List<Vacinacao> vacinacoes;     
 		
 	public Pessoa() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Pessoa(int id, String nome, LocalDate dataNascimento, model.entity.controleVacinas.enumerador.Sexo sexo,
-			String cpf, model.entity.controleVacinas.enumerador.TipoPessoa tipoPessoa) {
+	public Pessoa(int id, String nome, LocalDate dataNascimento, char sexo,
+			String cpf, int tipoPessoa, Pais pais) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -31,6 +31,7 @@ public class Pessoa {
 		this.sexo = sexo;
 		this.cpf = cpf;
 		this.tipoPessoa = tipoPessoa;
+		this.pais = pais;
 	}
 
 
@@ -59,11 +60,11 @@ public class Pessoa {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public Sexo getSexo() {
+	public char getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(Sexo sexo) {
+	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
 
@@ -75,12 +76,20 @@ public class Pessoa {
 		this.cpf = cpf;
 	}
 
-	public TipoPessoa getTipoPessoa() {
+	public int getTipoPessoa() {
 		return tipoPessoa;
 	}
 
-	public void setTipoPessoa(TipoPessoa tipoPessoa) {
+	public void setTipoPessoa(int tipoPessoa) {
 		this.tipoPessoa = tipoPessoa;
+	}
+
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
 	}
 
 	
