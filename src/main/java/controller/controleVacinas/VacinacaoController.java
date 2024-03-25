@@ -1,6 +1,5 @@
 package controller.controleVacinas;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.ws.rs.Consumes;
@@ -22,13 +21,13 @@ public class VacinacaoController {
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	
+	@Produces(MediaType.APPLICATION_JSON)		
 	public Vacinacao salvar(Vacinacao vacinacaoController) {
 		return vacinacaoService.salvar(vacinacaoController);
 	}
 	
 	@PUT
+	@Path("/atualizar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public boolean alterar(Vacinacao vacinaEditada) {

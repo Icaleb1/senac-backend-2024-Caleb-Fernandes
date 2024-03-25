@@ -23,12 +23,12 @@ public class VacinacaoRepository {
 		PreparedStatement stmt = Banco.getPreparedStatementWithPk(conexao, query);
 		
 		try {
-			
+
 			stmt.setInt(1, novaVacinacao.getIdPessoa());
 			stmt.setInt(2, novaVacinacao.getVacina().getId());
 			stmt.setDate(3, Date.valueOf(novaVacinacao.getDataAplicacao()));
 			stmt.setInt(4, novaVacinacao.getAvaliacao());
-			
+			stmt.execute();
 			ResultSet resultado = stmt.getGeneratedKeys();
 			if (resultado.next()) {
 				novaVacinacao.setId(resultado.getInt(1));
@@ -70,9 +70,9 @@ public class VacinacaoRepository {
 		// TODO pode alterar tudo na aplicação? Ou apenas a nota?
 		
 		boolean alterou = false;
-		String sql = "UPDATE controle_vacinas "
+		String sql = "UPDATE controle_vacinas.vacinacao "
 				+ "SET id_pessoa=?, id_vacina=?, data_aplicacao=?, "
-				+ "avaliacao=?, WHERE id=?";
+				+ "avaliacao=? WHERE id=?";
 		
 		Connection conn = Banco.getConnection();
 		PreparedStatement stmt = Banco.getPreparedStatementWithPk(conn, sql);
@@ -82,7 +82,7 @@ public class VacinacaoRepository {
 			stmt.setDate(3, Date.valueOf(vacinacaoEditada.getDataAplicacao()));
 			stmt.setInt(4, vacinacaoEditada.getAvaliacao());
 			
-			stmt.setInt(6, vacinacaoEditada.getId());
+			stmt.setInt(5, vacinacaoEditada.getId());
 			alterou = stmt.executeUpdate() > 0;
 		} catch (SQLException erro) {
 			System.out.println("Erro ao atualizar aplicação de vacina");
@@ -100,7 +100,7 @@ public class VacinacaoRepository {
 		
 		Vacinacao vacinacao = null;
 		ResultSet resultado = null;
-		String sql = "SELECT * FROM controle_vacinas WHERE id = " + id;
+		String sql = "SELECT * FROM controle_vacinas.vacinacao WHERE id = " + id;
 		
 		try {
 			resultado = stmt.executeQuery(sql);

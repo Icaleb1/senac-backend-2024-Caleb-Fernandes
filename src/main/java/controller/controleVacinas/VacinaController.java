@@ -14,6 +14,7 @@ import jakarta.ws.rs.core.MediaType;
 import model.entity.controleVacinas.Vacina;
 import service.controleVacinas.VacinaService;
 
+@Path("/vacina")
 public class VacinaController {
 
 
@@ -27,6 +28,7 @@ public class VacinaController {
 	}
 	
 	@PUT
+	@Path("/atualizar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public boolean atualizar(Vacina vacinaEditada){

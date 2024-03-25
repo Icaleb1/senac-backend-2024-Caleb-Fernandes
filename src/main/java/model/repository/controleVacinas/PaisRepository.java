@@ -59,10 +59,10 @@ try {
 			resultado = stmt.executeQuery(query);
 			if(resultado.next()){
 				pais = new Pais();
-				pais.setId(resultado.getInt("ID_PAIS_ORIGEM"));
+				pais.setId(resultado.getInt("ID"));
 				pais.setNome(resultado.getString("NOME"));
 				pais.setSigla(resultado.getString("SIGLA"));
-				
+
 			}
 		} catch (SQLException erro){
 			System.out.println("Erro ao consultar pais com o id: " + id);
