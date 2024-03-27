@@ -2,7 +2,7 @@ package service.controleVacinas;
 
 import java.util.List;
 
-import exception.controleVacinas.controleVacinasException;
+import exception.controleVacinas.ControleVacinasException;
 import model.entity.controleVacinas.Pessoa;
 import model.repository.controleVacinas.PessoaRepository;
 
@@ -10,7 +10,7 @@ public class PessoaService {
 
 	private PessoaRepository repository = new PessoaRepository();
 	
-	public Pessoa salvar(Pessoa novaPessoa) throws controleVacinasException {
+	public Pessoa salvar(Pessoa novaPessoa) throws ControleVacinasException {
 		validarCamposObrigatorios(novaPessoa);
 		
 		validarCpf(novaPessoa);
@@ -18,13 +18,13 @@ public class PessoaService {
 		return repository.salvar(novaPessoa);
 	}
 	
-	public boolean alterar(Pessoa pessoaEditada) throws controleVacinasException{
+	public boolean alterar(Pessoa pessoaEditada) throws ControleVacinasException{
 		validarCamposObrigatorios(pessoaEditada);
 		
 		return repository.alterar(pessoaEditada);
 	}
 	
-	private void validarCamposObrigatorios(Pessoa pessoa) throws controleVacinasException {
+	private void validarCamposObrigatorios(Pessoa pessoa) throws ControleVacinasException {
 		String mensagemValidacao = "";
 	
 		
@@ -54,15 +54,15 @@ public class PessoaService {
 		}
 		
 		if (!mensagemValidacao.isEmpty()) {
-			throw new controleVacinasException("Preencha o(s) seguinte(s) campo(s) \n " + mensagemValidacao);
+			throw new ControleVacinasException("Preencha o(s) seguinte(s) campo(s) \n " + mensagemValidacao);
 			
 		}
 		
 	}
 	
-	private void validarCpf(Pessoa novaPessoa) throws controleVacinasException{
+	private void validarCpf(Pessoa novaPessoa) throws ControleVacinasException{
 		if (repository.cpfJaCadastrado(novaPessoa.getCpf())) {
-			throw new controleVacinasException("CPF" + novaPessoa.getCpf() + " já cadastrado");
+			throw new ControleVacinasException("CPF" + novaPessoa.getCpf() + " já cadastrado");
 		}
 	}
 	
