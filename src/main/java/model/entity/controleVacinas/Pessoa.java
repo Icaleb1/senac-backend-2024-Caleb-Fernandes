@@ -1,9 +1,6 @@
  package model.entity.controleVacinas;
 
 import java.time.LocalDate;
-import java.util.List;
-
-import model.entity.controleVacinas.Vacinacao;
 
 
 public class Pessoa {

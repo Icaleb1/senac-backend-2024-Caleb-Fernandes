@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import exception.controleVacinas.ControleVacinasException;
+import model.entity.controleVacinas.Pessoa;
+import model.entity.controleVacinas.Vacina;
 import model.entity.controleVacinas.Vacinacao;
 import model.repository.controleVacinas.VacinacaoRepository;
 
@@ -46,5 +48,25 @@ public class VacinacaoService {
 		return vacinacaoRepository.consultarTodos();
 	}
 	
-
+	public void receberVacina(Vacinacao vacinacao) {
+		Pessoa pessoa = new Pessoa();
+		Vacina vacina = new Vacina();
+		String mensagemValidacao = "";
+		
+		switch(vacina.getEstagioPesquisa()) {
+		case 1: 
+			if(pessoa.getTipoPessoa() != 1) {
+				mensagemValidacao = " Estágio inicial somente para pesquisadores";
+			};
+		break;
+		case 2:
+			if(pessoa.getTipoPessoa() != 1 || pessoa.getTipoPessoa() != 2) {
+				mensagemValidacao = "Estágio de teste somente para pesquisadores ou voluntários";
+			}
+		break;
+		}
+		
+		
+		
+	}
 }

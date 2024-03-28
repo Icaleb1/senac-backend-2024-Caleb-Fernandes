@@ -4,10 +4,13 @@ import java.util.List;
 
 import exception.controleVacinas.ControleVacinasException;
 import model.entity.controleVacinas.Pessoa;
+import model.entity.controleVacinas.Vacinacao;
 import model.repository.controleVacinas.PessoaRepository;
+import model.repository.controleVacinas.VacinacaoRepository;
 
 public class PessoaService {
 
+	private VacinacaoRepository vacinacaoRepository = new VacinacaoRepository();
 	private PessoaRepository repository = new PessoaRepository();
 	
 	public Pessoa salvar(Pessoa novaPessoa) throws ControleVacinasException {
@@ -66,7 +69,9 @@ public class PessoaService {
 		}
 	}
 	
-	public boolean excluir(int id) {
+	public boolean excluir(int id) throws ControleVacinasException {
+		verificarVacinacaoPessoa(id);
+		
 		return repository.excluir(id);
 	}
 	
@@ -77,6 +82,13 @@ public class PessoaService {
 	
 	public Pessoa consultarPorId(int id) {
 		return repository.consultarPorId(id);
+	}
+	
+	private void verificarVacinacaoPessoa(int id) throws ControleVacinasException{
+		String mensagemValidacao = "";
+		if(!vacinacaoRepository.consultarPorIdPessoa(id).isEmpty()) {
+			throw new ControleVacinasException("Pessoa já vacinada! ");
+		}
 	}
 	
 }
